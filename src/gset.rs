@@ -21,4 +21,8 @@ impl GSet {
   pub fn insert(&mut self, element: String) {
     self.state.insert(element);
   }
+
+  pub fn extend(&mut self, other: GSet) {
+    self.state.extend(other.state);
+  }
 }
