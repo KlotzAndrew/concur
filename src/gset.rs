@@ -5,6 +5,13 @@ pub struct GSet {
   state: HashSet<String>
 }
 
+impl Default for GSet {
+  fn default() -> Self {
+    GSet::new()
+  }
+}
+
+
 impl GSet {
   pub fn new() -> Self {
     GSet{state: HashSet::new()}
@@ -14,7 +21,7 @@ impl GSet {
     self.state.clone()
   }
 
-  pub fn merge(&mut self, other: GSet) {
+  pub fn merge(&mut self, other: &GSet) {
     self.state.extend(other.value());
   }
 

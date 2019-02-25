@@ -5,6 +5,12 @@ pub struct LWWRegister {
   version: u32
 }
 
+impl Default for LWWRegister {
+  fn default() -> Self {
+    LWWRegister::new()
+  }
+}
+
 impl LWWRegister {
   pub fn new() -> Self {
     LWWRegister{data: 0, version: 0}

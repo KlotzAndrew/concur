@@ -8,6 +8,12 @@ pub struct TwoPhaseSet {
   rm_set: GSet
 }
 
+impl Default for TwoPhaseSet {
+  fn default() -> Self {
+    TwoPhaseSet::new()
+  }
+}
+
 impl TwoPhaseSet {
   pub fn new() -> Self {
     TwoPhaseSet{add_set: GSet::new(), rm_set: GSet::new()}

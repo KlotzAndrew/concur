@@ -8,6 +8,12 @@ pub struct PNCounter {
   neg: HashMap<String, i64>
 }
 
+impl Default for PNCounter {
+  fn default() -> Self {
+    PNCounter::new()
+  }
+}
+
 impl PNCounter {
   pub fn new() -> Self {
     let id = Uuid::new_v4().to_string();
@@ -17,7 +23,7 @@ impl PNCounter {
     let mut neg = HashMap::new();
     neg.insert(id.clone(), 0);
 
-    PNCounter{id: id, pos: pos, neg: neg}
+    PNCounter{id, pos, neg}
   }
 
   pub fn value(&self) -> i64 {

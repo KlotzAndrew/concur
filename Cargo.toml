@@ -6,3 +6,4 @@ edition = "2018"
 
 [dependencies]
 uuid = { version = "0.7", features = ["v4"] }
+clippy = { version = "0.0.212", optional = true }

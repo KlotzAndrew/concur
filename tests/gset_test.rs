@@ -21,11 +21,11 @@ fn it_merges() {
     second.insert("b".to_string());
     third.insert("c".to_string());
 
-    second.merge(third);
+    second.merge(&third);
     assert!(second.value().contains("b"));
     assert!(second.value().contains("c"));
 
-    first.merge(second);
+    first.merge(&second);
     assert!(first.value().contains("a"));
     assert!(first.value().contains("b"));
     assert!(first.value().contains("c"));

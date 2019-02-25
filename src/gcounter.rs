@@ -7,13 +7,19 @@ pub struct GCounter {
   state: HashMap<String, i64>
 }
 
+impl Default for GCounter {
+  fn default() -> Self {
+    GCounter::new()
+  }
+}
+
 impl GCounter {
   pub fn new() -> Self {
     let id = Uuid::new_v4().to_string();
     let mut state = HashMap::new();
     state.insert(id.clone(), 0);
 
-    GCounter{id: id, state: state}
+    GCounter{id, state}
   }
 
   pub fn value(&self) -> i64 {
