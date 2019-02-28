@@ -11,7 +11,6 @@ impl Default for GSet {
   }
 }
 
-
 impl GSet {
   pub fn new() -> Self {
     GSet{state: HashSet::new()}
